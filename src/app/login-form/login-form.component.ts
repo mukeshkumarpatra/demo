@@ -76,7 +76,7 @@ isFormValid(isCheck) {
 
     this.form.get('email').setValidators([
        Validators.required, 
-      Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
+       Validators.pattern("^[a-z]+@gmail.com")
     ]); 
     this.form.get('email').updateValueAndValidity();
 
