@@ -11,10 +11,11 @@
    </div> 
    <div class="form-group">
         <label for="email">Email</label>
-        <input  formControlName="email" id="email" type="email" class="form-control" [(ngModel)]="data.email">
-        <div *ngIf="(form.controls.email.invalid && form.controls.email.touched) || form.controls.email.dirty">
-            <div *ngIf="form.controls.email.errors.required" class="alert alert-danger"> Email is required</div>
-            <div *ngIf="form.controls.email.errors.pattern" class="alert alert-danger">Please provide a valid email address</div>
+        <input  formControlName="email" id="email" name="email" type="email" class="form-control" [(ngModel)]="data.email">
+        <div *ngIf="form.controls.email.touched && form.controls.email.invalid" class="alert alert-danger">
+            <div *ngIf="form.controls.email.errors.required"> Email is required</div>
+            <div *ngIf="form.controls.email.errors.pattern"> Email pattern invalid.</div>
+            
         </div>
     </div>
     <div class="form-group">
@@ -28,8 +29,6 @@
         <input formControlName="phnNumber" name="phoneNumber" id="phnNumber" type="number" class="form-control" [(ngModel)]="data.phnNumber" >
          <div *ngIf="form.controls.phnNumber.touched && form.controls.phnNumber.invalid" class="alert alert-danger">
             <div *ngIf="form.controls.phnNumber.errors.required">phoneNumber required.</div>
-            <div *ngIf="form.controls.phnNumber.errors.minlength">phoneNumber minimum length  required.</div>
-            
         </div>
     </div>
      <div class="form-group">

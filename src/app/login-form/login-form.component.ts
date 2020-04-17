@@ -24,13 +24,15 @@ export class LoginFormComponent {
     ]),
     email: new FormControl('',[
       Validators.required, 
-      Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$") ]),
+      Validators.pattern("^[a-z]+@gmail.com") 
+    ]),
     phnNumber:new FormControl('',[
       Validators.required,
       Validators.minLength(10)
      ]),
     gender:new FormControl('',[
-      Validators.required ])
+      Validators.required 
+    ])
   });
   get username(){
     return this.form.get('username');
